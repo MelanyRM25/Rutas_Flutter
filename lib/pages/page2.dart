@@ -12,18 +12,31 @@ class _Page2State extends State<Page2> {
     Navigator.pop(context);
   }
 
+  void irPagina3() {
+    Navigator.pushNamed(context, "/PAGE3");
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Page 2'),
+        title: const Text("PAGINA 2"),
       ),
       body: Center(
-        child: ElevatedButton(
-            style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.deepPurpleAccent.shade100),
-            onPressed: irPagina1,
-            child: Text("Atras")),
+        child: Column(
+          children: [
+            ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.deepPurpleAccent.shade100),
+                onPressed: irPagina1,
+                child: Text("Atras")),
+            ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.deepOrangeAccent.shade100),
+                onPressed: irPagina3,
+                child: Text("Ir a pagina 3")),
+          ],
+        ),
       ),
     );
   }
